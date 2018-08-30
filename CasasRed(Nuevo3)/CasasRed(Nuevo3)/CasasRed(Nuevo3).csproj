@@ -528,6 +528,10 @@
     <Content Include="Views\GastosContadurias\Index.cshtml" />
     <Content Include="Views\Gerente\index.cshtml" />
     <Content Include="Views\Gerente\Details.cshtml" />
+    <Content Include="Views\Gerente\Editc.cshtml" />
+    <Content Include="Views\Gerente\Editg.cshtml" />
+    <Content Include="Views\Gerente\Edith.cshtml" />
+    <Content Include="Views\Gerente\Editv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -259,3 +259,4 @@ C:\Users\DrokeMx\Documents\CASASREDNEW\ProyectoCR\CasasRed(Nuevo3)\CasasRed(Nuev
 C:\Users\DrokeMx\Documents\CASASREDNEW\ProyectoCR\CasasRed(Nuevo3)\CasasRed(Nuevo3)\obj\Debug\CasasRed(Nuevo3).csproj.CopyComplete
 C:\Users\DrokeMx\Documents\CASASREDNEW\ProyectoCR\CasasRed(Nuevo3)\CasasRed(Nuevo3)\obj\Debug\CasasRed(Nuevo3).dll
 C:\Users\DrokeMx\Documents\CASASREDNEW\ProyectoCR\CasasRed(Nuevo3)\CasasRed(Nuevo3)\obj\Debug\CasasRed(Nuevo3).pdb
+C:\Users\DrokeMx\Documents\CASASREDNEW\ProyectoCR\CasasRed(Nuevo3)\CasasRed(Nuevo3)\obj\Debug\CasasRed(Nuevo3).csprojAssemblyReference.cache
