@@ -138,14 +138,15 @@ namespace CasasRed_Nuevo3_.Controllers
         public string CrearContaduria(Contaduria contaduria, int corretaje_id)
         {
             CasasRedEntities CS = new CasasRedEntities();
-            Contaduria contaduria_obj = new Contaduria {
+            Contaduria contaduria_obj = new Contaduria
+            {
                 Cnt_Presupuesto_corretaje = 0,
                 Cnt_Presupuesto_gestion = 0,
                 Cnt_Presupuesto_habilitacion = 0,
                 Id_Corretaje = corretaje_id //Para saber a que casa esta asociado el gasto
             };
 
-        CS.Contaduria.Add(contaduria_obj);
+            CS.Contaduria.Add(contaduria_obj);
             CS.SaveChanges();
 
             return "Si funciona!...";

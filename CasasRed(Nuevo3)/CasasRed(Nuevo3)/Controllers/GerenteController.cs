@@ -244,9 +244,6 @@ namespace CasasRed_Nuevo3_.Controllers
 
             gestions = db.Gestion.ToList();
             verificacions = db.Verificacion.ToList();
-            
-
-
             Gestion gestion = db.Gestion.Find(id);
             idcliente = gestion.Id_Cliente;
             foreach (var searchidv in verificacions)
@@ -258,8 +255,6 @@ namespace CasasRed_Nuevo3_.Controllers
                     break;
                 }
             }
-
-
             if (continuar == true)
              {
 
@@ -276,7 +271,6 @@ namespace CasasRed_Nuevo3_.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             }
-
         }
 
         // POST: Verificacions/Edit/5
@@ -305,7 +299,36 @@ namespace CasasRed_Nuevo3_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Contaduria contaduria = db.Contaduria.Find(id);
+            List<Gastos> gastos = new List<Gastos>();
+            List<Contaduria> contadurias = new List<Contaduria>();
+           
+            bool continuar = false;
+
+            int? idconta = 0;
+          
+
+            gastos = db.Gastos.ToList();
+            contadurias = db.Contaduria.ToList();
+
+            foreach (var searchconta in gastos)
+            {
+                if (searchconta.Id_Corretaje == id)
+                {
+                    foreach (var searchconta2 in contadurias)
+                    {
+                        if (searchconta2.Id_Gastos == searchconta.Id)
+                        {
+                            idconta = searchconta2.Id;
+                            continuar = true;
+                            break;
+                        }
+                    }
+                }
+            }
+             if(continuar == true)
+            { 
+ 
+            Contaduria contaduria = db.Contaduria.Find(idconta);
             if (contaduria == null)
             {
                 return HttpNotFound();
@@ -313,6 +336,11 @@ namespace CasasRed_Nuevo3_.Controllers
             ViewBag.Id_Gastos = new SelectList(db.Gastos, "Id", "Gst_Concepto", contaduria.Id_Gastos);
             ViewBag.Id_GastosContaduria = new SelectList(db.GastosContaduria, "Id", "Id", contaduria.Id_GastosContaduria);
             return View(contaduria);
+            }
+            else
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
         }
 
         // POST: Contadurias/Edit/5
